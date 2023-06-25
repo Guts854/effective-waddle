@@ -21,6 +21,13 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
+        test: /\.m?js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: "swc-loader"
+        }
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         include: path.resolve(__dirname, "../src"),
         type: "asset/resource",
